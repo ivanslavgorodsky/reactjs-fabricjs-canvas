@@ -1,6 +1,6 @@
 # React.js + Fabric.js + Canvas + History
 
-IMAGE
+<img src="/public/assets/images/sample-1.png"/>
 
 * Fabric.js on Class
 * Canvas global variable
