@@ -14,7 +14,7 @@ export default class Exports extends React.Component {
       "name",
       "responsive", // to elements like shadow, follow other elements dynamically
       "clipPathObject", // temporary test (back)
-      "document", // to avenuz report, tecnical, ficha tecnica 
+      "document", // to report, tecnical, ficha tecnica 
       // radius
       "rx",
       "ry",
