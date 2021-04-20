@@ -1,6 +1,6 @@
 # React.js + Fabric.js + Canvas + History
 
-**If you want start a project fabricjs canvas, you need this.**
+**If you want start a fabric.js project width canvas, you need this.**
 
 Sample:
 
