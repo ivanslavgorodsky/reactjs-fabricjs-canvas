@@ -2,7 +2,7 @@
 
 **If you want start a fabric.js project width canvas, you need this.**
 
-Sample:
+## Sample
 
 <img src="/public/assets/images/sample-1.png"/>
 
