@@ -36,4 +36,4 @@ npm run start
   * Utils files
 
 ----
-by: natancabral, natancabraldev
+by: Natan Cabral
