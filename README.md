@@ -34,3 +34,6 @@ npm run start
   * ClipPath/SVG
   * Canvas
   * Utils files
+
+
+by: natancabral, natancabraldev
