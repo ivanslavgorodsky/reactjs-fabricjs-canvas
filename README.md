@@ -10,7 +10,7 @@
 
 We'll need a terminal, node and npm:
 ```bash
-// clone
+# clone
 git clone https://github.com/natancabral/reactjs-fabricjs-canvas.git
 # enter directory
 cd reactjs-fabricjs-canvas
