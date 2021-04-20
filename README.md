@@ -14,6 +14,8 @@ We'll need a terminal, node and npm:
 git clone https://github.com/natancabral/reactjs-fabricjs-canvas.git
 # enter directory
 cd reactjs-fabricjs-canvas
+# install repositories
+npm install
 # run project
 npm run start
 ```
