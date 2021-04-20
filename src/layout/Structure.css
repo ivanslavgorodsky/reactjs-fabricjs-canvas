@@ -1,0 +1,53 @@
+html, body {
+	/* overflow: hidden !important; */
+	scrollbar-width: thin; /* firefox tuny scrollbar size */
+}
+table#StructureCanvas, 
+table#StructureCanvas tbody tr, 
+table#StructureCanvas tbody tr td 
+{
+	padding: 0;
+	margin: 0; 
+	border: none;
+	border-spacing: 0px;
+}
+
+canvas, #canvas {
+	/* cursor: crosshair !important;
+	cursor: url('/assets/images/sample/dropper16slim.png') 4 16, crosshair !important; */
+	/* border-radius: 15px; */
+	/* border-bottom-right-radius: 15px;
+	border-top-right-radius: 15px; */
+  -webkit-filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
+  -mpz-filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
+}
+canvas:focus, #canvas:focus{
+	outline: none;
+	border: none;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+	width: 7px;
+	height: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background-color: #eeeeee;
+	/* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  */
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background: rgba(175, 175, 175, 0.8); 
+	/* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);  */
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(175, 175, 175,0.4); 
+}

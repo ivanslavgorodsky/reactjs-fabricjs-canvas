@@ -1,4 +1,4 @@
-# React.js + Fabric.js + Canvas
+# React.js + Fabric.js + Canvas + History
 
 IMAGE
 
