@@ -349,67 +349,63 @@ class UtilsCanvas extends React.Component {
 
   static set = (c, settings, callback) => {
 
-    if (settings === null || settings === undefined) {
-      return;
-    }
+    if ( settings === null || settings === undefined || typeof settings !== 'object' ) return;
 
-    const gao = settings.hasOwnProperty("obj") === true
-      ? settings.obj
-      : c.getActiveObject();
-
-    if (settings.obj !== undefined) {
-      // its ok
-    } else if (gao) {
-      settings.obj = gao;
+    let object, objects;
+    
+    // has object on settings
+    if( settings.hasOwnProperty('object') && settings.object ){
+      object = settings.object;
     } else {
+      // or get active object
+      object = c.getActiveObject();
+    } 
+
+    // convetional set
+    if ( settings.hasOwnProperty("conventionalSet") && settings.conventionalSet === true ) {
+      object.set(settings);
       return;
     }
 
-    if (
-      settings.hasOwnProperty("conventionalSet") &&
-      settings.conventionalSet === true
-    ) {
-      settings.obj.set(settings);
-      return;
+    // objects in array
+    if ( object.hasOwnProperty('_objects') && object._objects ) {
+      objects = object._objects;
+    } else {
+      objects = [object];
     }
 
-    if (settings.obj._objects === undefined) {
-      for (let prop in settings) {
-        if (prop === "obj") continue;
+    // forEach settings
+    for (let prop in settings) {
+
+      // discart object key and continue
+      if (prop === 'object') continue;
+
+      // forEach elements
+      objects.forEach( el => {
+
         if (prop === "width") {
-          settings.obj.scaleToWidth(settings.width);
+          // rescale width
+          object.scaleToWidth(settings.width);
         } else if (prop === "height") {
-          settings.obj.scaleToWidth(settings.height);
+          // rescale height
+          object.scaleToWidth(settings.height);
         } else if (prop === "scale") {
-          settings.obj.scale(settings.scale);
-          //} else if (settings.obj.hasOwnProperty(prop)) {
+          // scale
+          object.scale(settings.scale);
+          //scale and opacity
+        } else if (prop === "angle" || prop === "opacity") {
+          object.set(prop, settings[prop]);
+          //} else if (object._objects[i].hasOwnProperty(prop)) {
         } else {
-          settings.obj.set(prop, settings[prop]);
+          // conventional set
+          el.set(prop, settings[prop]);
+          console.log("conventional:set!");
         }
-      }
-    } else {
-      for (let prop in settings) {
-        if (prop === "obj") continue;
 
-        for (let i = 0; i < settings.obj._objects.length; i++) {
-          if (prop === "width") {
-            settings.obj.scaleToWidth(settings.width);
-          } else if (prop === "height") {
-            settings.obj.scaleToWidth(settings.height);
-          } else if (prop === "scale") {
-            settings.obj.scale(settings.scale);
-          } else if (prop === "angle" || prop === "opacity") {
-            settings.obj.set(prop, settings[prop]);
-            //} else if (settings.obj._objects[i].hasOwnProperty(prop)) {
-          } else {
-            settings.obj._objects[i].set(prop, settings[prop]);
-            console.log("settings:Ops!");
-          }
-        }
-      }
-    }
+      }); // forEach
+    } // for
 
-    settings.obj.setCoords();
+    object.setCoords();
     UtilsCanvas.renderAll( c );
     // TODO librariesHistory.state.save();
   }
