@@ -17,6 +17,8 @@ import { useGlobal } from "../../components/config/global";
 import Paragraph from "../../components/fabricjs/Paragraph";
 import CreateIcon from '@material-ui/icons/Create';
 
+import OptionsButton from "../../components/OptionsBtn";
+
 const styles = {
   tool: {
     zIndex: 10,
@@ -115,6 +117,7 @@ const PanelToolBigButton = (props) => {
           </button>
         </Tooltip>
       ))}
+      <OptionsButton />
     </div>
   );
 };
