@@ -14,7 +14,7 @@ Turn on AutoSnap feature to snap objects
 We'll need a terminal, node and npm:
 ```bash
 # clone
-git clone https://github.com/natancabral/reactjs-fabricjs-canvas.git
+git clone https://github.com/ivanslavgorodsky/reactjs-fabricjs-canvas.git
 # enter directory
 cd reactjs-fabricjs-canvas
 # install repositories
