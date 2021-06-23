@@ -6,6 +6,9 @@
 
 <img src="/public/assets/images/sample-1.png"/>
 
+Turn on AutoSnap feature to snap objects
+<img src="/public/assets/images/sample-2.png"/>
+
 ## Install
 
 We'll need a terminal, node and npm:
